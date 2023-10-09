@@ -1,0 +1,29 @@
+.divs{
+    margin-top: 0;
+     ;  
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+  
+} 
+
+.holas{
+
+   
+ }
+ 
+
+ /* .cartas{
+    background-image: url("/public/fondorick.jpg");
+    background-size: cover;
+    border: 0.2rem solid black ;
+    border-radius: 1.5rem;
+    margin: 2rem;
+
+ }
+
+ .cartas :hover
+ {
+     border: 0.3rem;
+     border-radius: 1.5rem;
+     box-shadow: 0 0 10px rgb(255, 0, 0);
+ } */

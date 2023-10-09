@@ -1,0 +1,71 @@
+
+
+
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
+.body{
+    background-image: url("../../Images/daaaade.png"); 
+    width: 100%;
+    height: 100%;
+}
+
+.animacion{
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    top: -25px;
+    z-index: 1;
+}
+
+.section{
+   
+    padding-top:150px ;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 800px;
+    perspective: 400px;
+    color: rgb(255, 204, 0);
+    font-family: "Pathway Gotic One", sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    line-height: 150%;
+    text-align: justify;
+}
+.section::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 45%, rgba(20,20,20,0.1) 100%);
+}
+
+.contenidotexto{
+    
+    padding-top: 800px;
+    position: relative;
+    transform: 50% 100%;
+    animation: movimiento 60s linear forwards;
+    width: 900px;
+}
+
+@keyframes movimiento{
+    0%{
+        top: 0;
+        transform: rotateX(20deg) translateZ(0);
+    }
+    100%{
+        top:-6000px;
+        transform: rotateX(21deg) translateZ(-2500px);
+    }
+}
+

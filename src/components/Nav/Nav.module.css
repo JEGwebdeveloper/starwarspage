@@ -1,0 +1,79 @@
+.titulo{
+    
+    
+}
+
+/* .boton{
+    height: 80px;
+    width: 100px;
+   border-top: none;
+   border-right: none;
+   border-bottom: none;
+   font-size: 1.5rem;
+   font-family: 'Creepster', cursive;
+   
+    background-color: rgba(179, 98, 255, 0.526);
+    transition: 0.3s;
+}
+
+.boton:hover{
+    background-color: rgba(40, 235, 10, 0.47);
+    font-size: 2rem;
+    font-family: 'Creepster', cursive;
+} */
+
+/* .navbut{
+    display: flex;
+    justify-content: center;
+   flex-direction: row;
+   
+  
+} */
+
+/* .random{
+    border-radius: 1rem;
+    height: 60px;
+    width: 200px;
+   border-top: none;
+   border-right: none;
+   border-bottom: none;
+   
+    background-color: rgba(2, 255, 251, 0.558);
+    transition: 0.3s;
+    font-size: 1.5rem;
+    font-family: 'Creepster', cursive;
+}
+
+.random:hover{
+    background-color: rgba(40, 235, 10, 0.47);
+    font-size: 2rem;
+    font-family: 'Creepster', cursive;
+} */
+
+.tresbot{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.random {
+  
+    height: 55px;
+    width: 150px;
+    background-color:rgba(0, 0, 0, 0.153);
+      font-weight: bold;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-size: 15px;
+      transition: 0.5s ease;
+    border: none;
+    }
+    
+  .random:hover{
+    color: rgb(255, 187, 0);
+  }
+  
+
+
+   

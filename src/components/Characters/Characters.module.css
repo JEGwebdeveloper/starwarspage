@@ -1,0 +1,41 @@
+.container{
+    background-image: url("../../Images/daaaade.png");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.img1{
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 30px;
+    width: 350px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 400px;
+    border: 1px solid rgb(255, 0, 0);
+    font-family: "bebas neue", sans-serif;
+    color: rgb(255, 174, 0);
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+    min-height: 500px;
+    width: 1700px;
+    color: white;
+}
