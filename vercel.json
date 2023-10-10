@@ -1,9 +1,5 @@
 {
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/src/App.jsx"
-      }
-    ]
+  "routes": [{"src":"/[^.]+",
+  "dest":"/",
+  "status":200}]
   }
-  
