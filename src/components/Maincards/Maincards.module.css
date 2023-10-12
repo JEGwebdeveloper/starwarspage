@@ -67,9 +67,10 @@ img{
 }
 
 .img{
+    margin-top: 40px;
     user-select: none;
-    width: 900px;
-    height: 80px;
+    width: 1150px;
+    height: 100px;
 }
 
 .cont{

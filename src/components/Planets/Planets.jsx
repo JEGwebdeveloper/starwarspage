@@ -5,9 +5,11 @@ import Titulo from "../../Images/titulo.png";
 import Nav from "../Nav/Nav";
 import axios from "axios";
 import Card from "../Card/Card";
+import PlanetesFilters from "./Planetsfilters"
 
 export default function Planets(props) {
   const [planets, setPlanets] = useState([]);
+  const [copyfullplanets, setCopyfullplanets] = useState([]);
  
  
 
@@ -17,6 +19,8 @@ export default function Planets(props) {
       const response = await axios.get(`https://swapi.dev/api/planets/${id}`);
       const newPlanet={...response.data, id};
       setPlanets((planets) => [...planets, newPlanet]); // Almacena los datos en el estado como una matriz
+      setCopyfullplanets((planets)=> [...planets, newPlanet]);
+      console.log(planets)
     } catch (error) {
       console.error('Error al obtener datos de la API:', error);
     }
@@ -33,6 +37,10 @@ export default function Planets(props) {
        planets.filter((planet) => planet.id !==id))
  }
 
+ const handlerfilterplanets = (p) =>{
+  setPlanets(p)
+}
+
 
   return (
     <div className={styles.container}>
@@ -44,7 +52,14 @@ export default function Planets(props) {
         <SearchBar planets={planets} search={search}></SearchBar>
       </div>
       <div className={styles.content}>
-        <div className={styles.filter}>filter</div>
+        <div className={styles.filter}>
+        <h1>FILTERS</h1>
+          <PlanetesFilters 
+          copyfullplanets={copyfullplanets} 
+          planets={planets} 
+          handlerfilterplanets={handlerfilterplanets}>
+          </PlanetesFilters>
+          </div>
         <div className={styles.cards}>
           {planets.map((element, index) => (
             <Card

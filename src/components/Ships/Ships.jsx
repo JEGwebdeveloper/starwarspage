@@ -6,13 +6,16 @@ import Titulo from "../../Images/titulo.png"
 import Nav from "../Nav/Nav"
 import Shipcards from "./Shipcards"
 import axios from "axios"
+import Shipsfilters from "./Shipsfilters"
+
+
 
 
 
 export default function Ships(props){
 
     const [Ships, setShips] = useState([]);
- 
+    const [copyfullships, setCopyfullships] = useState([]);
  
 
     const search = async (id) => {
@@ -21,6 +24,8 @@ export default function Ships(props){
         const response = await axios.get(`https://swapi.dev/api/starships/${id}`);
         const newShip={...response.data, id};
         setShips((ships) => [...ships, newShip]); // Almacena los datos en el estado como una matriz
+        setCopyfullships((ships) => [...ships, newShip])
+        console.log(Ships)
       } catch (error) {
         console.error('Error al obtener datos de la API: vehiculos', error);
       }
@@ -38,7 +43,10 @@ export default function Ships(props){
          Ships.filter((ship) => ship.id !==id))
    }
   
-
+   const handlerfilterships = (p) =>{
+    setShips(p)
+  }
+  
 
 
     return(
@@ -52,7 +60,12 @@ export default function Ships(props){
             </div>
             <div className={styles.content}>
                 <div className={styles.filter}>
-                    filter
+                  <h1>FILTERS</h1>
+                <Shipsfilters  
+                copyfullships={copyfullships} 
+                ships={Ships} 
+                handlerfilterships={handlerfilterships}>
+                </Shipsfilters>
                 </div>
                 <div className={styles.cards}>
                     {Ships.map((element, index) => (

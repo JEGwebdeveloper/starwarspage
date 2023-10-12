@@ -34,9 +34,9 @@ import Titulo from "../../Images/titulo.png";
         <div className={styles.maincards}>
              
 
-            {maincardspremap.map((element) => {
+            {maincardspremap.map((element, index) => {
                 return(
-                <div className={styles.maincard}>
+                <div key={index} className={styles.maincard}>
                     <img src={element.img} alt={element.title} />
                    <Link to={element.nav}> <h4>{element.title}</h4> </Link>
                 </div>

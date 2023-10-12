@@ -21,21 +21,40 @@
     flex-direction: row;
 }
 .filter{
+    margin-left: 20px;
+    backdrop-filter: blur(3px); 
+    background-color: rgba(0, 0, 0, 0.124);
+    margin-top: -70px;
     display: flex;
     flex-direction: column;
     height: 500px;
     width: 400px;
-    border: 1px solid rgb(255, 0, 0);
+    /* border: 1px solid rgb(255, 0, 0); */
     font-family: "bebas neue", sans-serif;
     color: rgb(255, 174, 0);
 }
 
 .cards{
+    margin-top: -80px;
     display: flex;
     flex-direction: row;
     gap: 40px;
     flex-wrap: wrap;
     min-height: 500px;
-    width: 1700px;
+    width: 4600px;
     color: white;
+    padding-left: 10px;
+   
+}
+
+.search{
+    margin-top: -100px;
+}
+
+h1{
+    color:rgb(255, 255, 255);
+    margin: 0;
+    text-align:left;
+    font-size: 50px;
+    user-select: none;
 }

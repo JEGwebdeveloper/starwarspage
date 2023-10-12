@@ -10,7 +10,9 @@ export function Formulario(props){
     const {login} = props;
     const [userData, setuserData] = useState({
         email:"",
-        password:""
+        password:"",
+        emailtexted: false,
+        passwordtexted: false
     });
 
     const [errors, seterrors] = useState({
@@ -25,10 +27,22 @@ export function Formulario(props){
  
 
     const handleChange = (event) => {
-        setuserData({
-            ...userData,
-            [event.target.name]: event.target.value
-        })
+       
+        if( [event.target.name] == "email"){
+            setuserData({
+                ...userData,
+                [event.target.name]: event.target.value,
+                emailtexted: true
+            })
+        }
+        else if( [event.target.name] == "password"){
+            setuserData({
+                ...userData,
+                [event.target.name]: event.target.value,
+                passwordtexted: true
+            })
+        }
+        
 
         seterrors(
             validation({
@@ -84,11 +98,11 @@ export function Formulario(props){
                             <div className={styles.text}>
                                 <label className={styles.labe} htmlFor="Email">EMAIL</label>
                                 <input className={styles.in} type="text" onChange={handleChange} value={userData.email} name="email" />
-                                {errors.email && <p className={styles.pa} >{errors.email}</p>}
+                                {userData.emailtexted? <p className={styles.pa} >{errors.email}</p>: ""}
                                 <br />
                                 <label className={styles.labe} htmlFor="Password">PASSWORD</label>
                                 <input className={styles.in} type="text" onChange={handleChange} value={userData.password} name="password" />
-                                {errors.password && <p className={styles.pa}>{errors.password}</p>}
+                                {userData.passwordtexted ? <p className={styles.pa}>{errors.password}</p> : ""}
                                 <br />
                                 <button className={styles.sub}>Log In</button>
                             </div>

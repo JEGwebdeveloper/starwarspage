@@ -11,24 +11,32 @@ import Filters from "./Filters";
 
 export default function Characters(props) {
   const [characters, setCharacters] = useState([]);
-
+  const [copyfullcharacters, setCopyfullcharacters] = useState([]);
   const search = async (id) => {
     try {
       const response = await axios.get(`https://swapi.dev/api/people/${id}`);
       const newCharacter = { ...response.data, id };
       setCharacters((characters) => [...characters, newCharacter]);
+      setCopyfullcharacters((characters)=> [...characters, newCharacter]);
     } catch (error) {
       console.error("Error al obtener datos de la API:", error);
     }
   };
+ 
+ 
 
-  useEffect(() => {
-    search(1); // Debes proporcionar un ID válido o dejarlo en blanco según tu lógica
+  useEffect((id) => {
+    search(id); // Debes proporcionar un ID válido o dejarlo en blanco según tu lógica
   }, []);
 
   const onClose = (id) => {
     setCharacters(characters.filter((character) => character.id !== id));
   };
+
+  const handlerfiltercharacters = (p) =>{
+    setCharacters(p)
+  }
+
 
   return (
     <div className={styles.container}>
@@ -41,8 +49,8 @@ export default function Characters(props) {
             </div>
       <div className={styles.content}>
         <div className={styles.filter}>
-          <h1>FILTER</h1>
-          <Filters characters={characters} />
+          <h1>FILTERS</h1>
+          <Filters copyfullcharacters={copyfullcharacters} characters={characters} handlerfiltercharacters={handlerfiltercharacters} />
         </div>
         <div className={styles.cards}>
           {characters.map((element, index) => (
@@ -56,6 +64,7 @@ export default function Characters(props) {
               Skin_color={element.skin_color}
               Gender={element.gender}
               Species={element.species}
+              Haircolor={element.hair_color}
             ></Characterscards>
           ))}
         </div>

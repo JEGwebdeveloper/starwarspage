@@ -8,6 +8,7 @@
 
 
 .cont{
+   
    width: 100%;
    display: flex;
    flex-direction: row;
@@ -22,11 +23,12 @@
     padding: 2%;
     min-height:400px;
     width: 300px;
-    background-color: rgba(3, 28, 255, 0.103);
-    border: 3px solid rgb(29, 0, 197);
+    background-color: rgba(0, 26, 255, 0.103);
+    border: 2px solid rgb(255, 179, 0);
     backdrop-filter: blur(0.9px);
     border-radius: 1rem;
-   color: aliceblue;
+    box-shadow: 0px 0px 60px #0f00e7;
+   color: rgb(255, 174, 0);
 }
 
 
@@ -50,7 +52,7 @@ label{
     width: 200px;
     border-radius: 0.5rem;
     background-color: rgba(10, 10, 10, 0.506);
-    border: 1px solid rgb(206, 185, 0);
+    border: 1px solid rgb(255, 255, 255);
     color: white;
     font-weight: 10px;
     font-size: 20px;
@@ -65,7 +67,7 @@ label{
 }
 
 .sub1 {
-    margin-top: 10px;
+    margin-top: 30px;
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 5px;
     font-size: 20px;
