@@ -23,7 +23,7 @@ export default function SearchBar({search, characters}) {
          placeholder="1,2,3,4..." /> 
          
         
-        <button className={styles.agregar} onClick={()=> search(id)}>Agregar</button> 
+        <button className={styles.agregar} onClick={()=> search(id)}>Add card</button> 
 
          
        
