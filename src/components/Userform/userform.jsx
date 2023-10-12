@@ -48,7 +48,7 @@ export function Userform(props){
             <div className={styles.forms1}>
                 <form onSubmit={handleSubmit} action="">
                 <div className={styles.text1}>
-                <label htmlFor="Name">Name</label>
+                <label htmlFor="Name">Your name</label>
                 <input className={styles.input1} type="text" onChange={handleChange} value={userData.name} name="name" />
                 {errors.name && <p className={styles.pa1}>{errors.name}</p>}
                 <br />
