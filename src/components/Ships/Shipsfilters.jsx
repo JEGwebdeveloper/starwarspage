@@ -18,7 +18,7 @@ export default function Filters(props) {
     "0": false,
   })
 
-  const [copy, setCopy] = useState([])
+  
 
   const handlerclick = () => {
     console.log(props.copyfullships)
@@ -46,7 +46,7 @@ export default function Filters(props) {
 
   console.log("deberia ser true", event.target.checked)
   if(event.target.checked){
-  setCopy(props.ships)}
+  props.setCopy(props.ships)}
   else ""
 
   if(hola === "starship_class"){
@@ -74,7 +74,7 @@ export default function Filters(props) {
         //   }
         //   else{
          
-          props.handlerfilterships(copy);      
+          props.handlerfilterships(props.copy);      
          
           }
       
@@ -109,9 +109,9 @@ export default function Filters(props) {
         }
     }
     else{
-      console.log(copy)
+     
         // const resultfilter = props.characters.filter(character => character.gender !== event.target.value);
-        props.handlerfilterships(copy);      
+        props.handlerfilterships(props.copy);      
     }
   }    
   };

@@ -10,7 +10,7 @@ import PlanetesFilters from "./Planetsfilters"
 export default function Planets(props) {
   const [planets, setPlanets] = useState([]);
   const [copyfullplanets, setCopyfullplanets] = useState([]);
- 
+  const [copy, setCopy] = useState([])
  
 
   const search = async (id) => {
@@ -33,8 +33,10 @@ export default function Planets(props) {
   }, []);
 
   const onClose = (id) =>{
-    setPlanets(
-       planets.filter((planet) => planet.id !==id))
+
+    setPlanets(planets.filter((planet) => planet.id !== id))
+    setCopyfullplanets(copyfullplanets.filter((planet) => planet.id !== id))
+    setCopy(copy.filter((planet) => planet.id !== id))
  }
 
  const handlerfilterplanets = (p) =>{
@@ -55,6 +57,8 @@ export default function Planets(props) {
         <div className={styles.filter}>
         <h1>FILTERS</h1>
           <PlanetesFilters 
+          copy={copy}
+          setCopy={setCopy}
           copyfullplanets={copyfullplanets} 
           planets={planets} 
           handlerfilterplanets={handlerfilterplanets}>
@@ -65,7 +69,7 @@ export default function Planets(props) {
             <Card
             img={`https://starwars-visualguide.com/assets/img/planets/${element.id}.jpg`}
               onClose={onClose}
-             
+             id={element.id}
               key={index}
               Name={element.name}
               Climate={element.climate}

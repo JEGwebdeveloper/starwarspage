@@ -39,6 +39,9 @@
   
   /* Estilos para "bottominfo" */
   .bottominfo {
+    display: flex;
+      position: relative;
+    justify-content: center;
     text-align: center;
     font-family: "Bebas neue", sans-serif;
     font-size: 35px;
@@ -48,4 +51,43 @@
   
   }
   
+  .delete{
+    margin-left: 5px;
+    
+    font-size: 25px;
+  }
   
+  .delete:hover{
+    color: red;
+  }
+  
+  .fav{
+    margin-right: 5px;
+    font-size: 25px;
+  }
+  
+  .fav:hover{
+    color: rgb(255, 153, 0);
+  }
+  
+  .favon{
+    margin-right: 5px;
+    color: rgb(255, 153, 0);
+  }
+  
+  .info{
+    top: 12px;
+    right: 10px;
+  position: absolute;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .info:hover{
+    color: rgb(255, 157, 0);
+  }
+  .name{
+  
+  
+   
+  }

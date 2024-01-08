@@ -12,6 +12,8 @@ import Filters from "./Filters";
 export default function Characters(props) {
   const [characters, setCharacters] = useState([]);
   const [copyfullcharacters, setCopyfullcharacters] = useState([]);
+  const [copy, setCopy] = useState([]);
+
   const search = async (id) => {
     try {
       const response = await axios.get(`https://swapi.dev/api/people/${id}`);
@@ -31,6 +33,8 @@ export default function Characters(props) {
 
   const onClose = (id) => {
     setCharacters(characters.filter((character) => character.id !== id));
+    setCopyfullcharacters(copyfullcharacters.filter((character) => character.id !== id));
+    setCopy(copy.filter((character) => character.id !== id));
   };
 
   const handlerfiltercharacters = (p) =>{
@@ -50,13 +54,14 @@ export default function Characters(props) {
       <div className={styles.content}>
         <div className={styles.filter}>
           <h1>FILTERS</h1>
-          <Filters copyfullcharacters={copyfullcharacters} characters={characters} handlerfiltercharacters={handlerfiltercharacters} />
+          <Filters copyfullcharacters={copyfullcharacters} copy={copy} setcopy={setCopy} characters={characters} handlerfiltercharacters={handlerfiltercharacters} />
         </div>
         <div className={styles.cards}>
           {characters.map((element, index) => (
             <Characterscards
               onClose={onClose}
               img={`https://starwars-visualguide.com/assets/img/characters/${element.id}.jpg`}
+              id={element.id}
               key={index}
               Name={element.name}
               Height={element.height}

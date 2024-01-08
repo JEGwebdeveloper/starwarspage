@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Planetsfilters.module.css";
 
+
+
 export default function Filters(props) {
   const [checkFilter, setCheckfilter] = useState({
    
@@ -23,7 +25,7 @@ export default function Filters(props) {
     gasgiant: false,
   });
 
-  const [copy, setCopy] = useState([])
+  
 
   const handlerclick = () => {
     console.log(props.copyfullplanets)
@@ -51,7 +53,7 @@ export default function Filters(props) {
 
   console.log("deberia ser true", event.target.checked)
   if(event.target.checked){
-  setCopy(props.planets)}
+  props.setCopy(props.planets)}
   else ""
 
   if(hola === "climate"){
@@ -75,7 +77,7 @@ export default function Filters(props) {
         //   }
         //   else{
          
-          props.handlerfilterplanets(copy);      
+          props.handlerfilterplanets(props.copy);      
           
           }
       
@@ -88,9 +90,9 @@ export default function Filters(props) {
         props.handlerfilterplanets(resultfilter);
     }
     else{
-      console.log(copy)
+      
         // const resultfilter = props.characters.filter(character => character.gender !== event.target.value);
-        props.handlerfilterplanets(copy);      
+        props.handlerfilterplanets(props.copy);      
     }
   }    
   };
@@ -99,6 +101,7 @@ export default function Filters(props) {
 
   return (
     <div className={styles.container}>
+      
         <div className={styles.type}>
             <div className={styles.title}>Climate</div>
             <div className={styles.btnh2}> 

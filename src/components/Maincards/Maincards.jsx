@@ -5,6 +5,7 @@ import darthvader from "../../Images/darth.jpg"
 import ships from "../../Images/ships.jpg"
 import deathstar1 from "../../Images/deathstar1.jpg"
 import Titulo from "../../Images/titulo.png";
+import { Button } from "@radix-ui/themes";
 
  export default function Maincards (){ 
     
@@ -37,6 +38,7 @@ import Titulo from "../../Images/titulo.png";
             {maincardspremap.map((element, index) => {
                 return(
                 <div key={index} className={styles.maincard}>
+                  
                     <img src={element.img} alt={element.title} />
                    <Link to={element.nav}> <h4>{element.title}</h4> </Link>
                 </div>

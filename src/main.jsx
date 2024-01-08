@@ -6,11 +6,16 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { store } from './store'
 import { Provider } from 'react-redux'
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <BrowserRouter>
+<Theme>
+<BrowserRouter>
       <App />
     </BrowserRouter>
+</Theme>
+   
   </Provider>
 )

@@ -2,9 +2,11 @@
 
 
 
-h1{
+.end{
+    font-size: 80px;
     text-align: center;
     font-size: 50px;
+    color: rgb(255, 204, 0);
 }
 
 

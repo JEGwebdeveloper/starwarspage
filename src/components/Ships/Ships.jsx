@@ -16,7 +16,7 @@ export default function Ships(props){
 
     const [Ships, setShips] = useState([]);
     const [copyfullships, setCopyfullships] = useState([]);
- 
+    const [copy, setCopy] = useState([]);
 
     const search = async (id) => {
       
@@ -39,8 +39,9 @@ export default function Ships(props){
     }, []);
   
     const onClose = (id) =>{
-      setShips(
-         Ships.filter((ship) => ship.id !==id))
+      setShips(Ships.filter((ship) => ship.id !== id))
+    setCopyfullships(copyfullships.filter((ship) => ship.id !== id))
+    setCopy(copy.filter((ship) => ship.id !== id))
    }
   
    const handlerfilterships = (p) =>{
@@ -62,6 +63,8 @@ export default function Ships(props){
                 <div className={styles.filter}>
                   <h1>FILTERS</h1>
                 <Shipsfilters  
+                copy={copy}
+                setcopy={setCopy}
                 copyfullships={copyfullships} 
                 ships={Ships} 
                 handlerfilterships={handlerfilterships}>
@@ -70,6 +73,7 @@ export default function Ships(props){
                 <div className={styles.cards}>
                     {Ships.map((element, index) => (
                         <Shipcards
+                        id={element.id}
                         onClose={onClose}
                         img={`https://starwars-visualguide.com/assets/img/starships/${element.id}.jpg`}
                         key={index}

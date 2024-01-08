@@ -35,7 +35,7 @@ export default function About({namecom}) {
                 maybe the force will find them again in the next episode in {namecom.company}.
                 </p>
 
-                <h1>THANKS A LOT</h1>
+                <h1 className={styles.end}>THANKS A LOT</h1>
 
 
             

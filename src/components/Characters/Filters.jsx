@@ -14,7 +14,7 @@ export default function Filters(props) {
     blue: false
   });
 
-  const [copy, setCopy] = useState([])
+  
 
   const handlerclick = () => {
     // Crear un nuevo objeto con todos los valores establecidos en false
@@ -41,7 +41,7 @@ export default function Filters(props) {
 
   console.log("deberia ser true", event.target.checked)
   if(event.target.checked){
-  setCopy(props.characters)}
+  props.setcopy(props.characters)}
   else ""
 
   if(hola === "gender"){
@@ -65,7 +65,7 @@ export default function Filters(props) {
           }
           else{
          
-          props.handlerfiltercharacters(copy);      
+          props.handlerfiltercharacters(props.copy);      
           console.log(event.target.checked);
           }
       }
@@ -78,9 +78,9 @@ export default function Filters(props) {
         props.handlerfiltercharacters(resultfilter);
     }
     else{
-      console.log(copy)
+    
         // const resultfilter = props.characters.filter(character => character.gender !== event.target.value);
-        props.handlerfiltercharacters(copy);      
+        props.handlerfiltercharacters(props.copy);      
     }
   }   
   else if(hola === "eyescolor"){
@@ -94,7 +94,7 @@ export default function Filters(props) {
     else {
     
         // const resultfilter = props.characters.filter(character => character.gender !== event.target.value);
-        props.handlerfiltercharacters(copy);      
+        props.handlerfiltercharacters(props.copy);      
        
     }
   }   
@@ -106,7 +106,7 @@ export default function Filters(props) {
     }
     else {
         // const resultfilter = props.characters.filter(character => character.gender !== event.target.value);
-        props.handlerfiltercharacters(copy);      
+        props.handlerfiltercharacters(props.copy);      
     }
   }
      

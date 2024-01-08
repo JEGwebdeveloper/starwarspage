@@ -4,11 +4,14 @@ import { addFav, removeFav } from "../../actions"
 import { connect } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo, faBookmark, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 
 
 
- function Card({Name,num, img, Climate, Terrain, Population, Diameter, Rotation, Gravity, onClose, addFav, removeFav, myFavorites,id }) {
+
+ function Card({Name, img, id, Climate, Terrain, Population, Diameter, Rotation, Gravity, onClose, addFav, removeFav, myFavorites }) {
 
    const [isFav, setisFav] = useState(false)
 
@@ -40,18 +43,26 @@ import { useEffect } from "react";
                <div className={styles.delete}>
                <div className={styles.boton}>
          
-                     {<button className={styles.boton1} onClick={ () =>{onClose(num)}}>Eliminar tarjeta</button>}
+                     {/* {<button className={styles.boton1} onClick={ () =>{onClose(num)}}>Eliminar tarjeta</button>} */}
+                     {/* {<button className={styles.boton1} onClick={ () =>{onClose(num)}}><FontAwesomeIcon icon={faTrashCan} /></button>} */}
+                     <i className={styles.delete} onClick={ () =>{onClose(id)}} ><FontAwesomeIcon icon={faTrashCan} /></i>
                </div>
                </div>
                <div className={styles.fav}>
+               {/* <FontAwesomeIcon icon={faCircleInfo} /> */}
                   {
                      isFav ? (
-                        <button onClick={handleFavorite}>❤️</button>
+                     //   <button onClick={handleFavorite}>   <FontAwesomeIcon icon={faBookmark} /> </button>
+                       <i className={styles.fav} onClick={handleFavorite} ><FontAwesomeIcon icon={faBookmark} /></i>
+                        // <button onClick={handleFavorite}>❤️</button>
                      ) : (
-                        <button onClick={handleFavorite}>🤍</button>
+                        // <button onClick={handleFavorite}>🤍</button>
+                        <i className={styles.favon} onClick={handleFavorite} ><FontAwesomeIcon icon={faBookmark} /></i>
                      )
                   }
                </div>
+              
+             
             </div>
             <div  className={styles.imgcard}>
               
@@ -64,9 +75,9 @@ import { useEffect } from "react";
             </div>
             <div className={styles.bottominfo}>
                <div className={styles.name}>{Name}</div>
-             
-               <div className={styles.info}><Link to={`/detail/${id}`}>{<h2 className={styles.nombre}>{Name}</h2>}</Link></div>
-               
+               <i className={styles.info} onClick={handleFavorite} ><FontAwesomeIcon icon={faCircleInfo} /></i>
+              
+              
             </div>
     
       </div>

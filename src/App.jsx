@@ -24,6 +24,7 @@ import Ships from './components/Ships/Ships';
 
 
 
+
 function App() {
    
    const [namecom, setNamecom] = useState({})
@@ -66,47 +67,6 @@ function App() {
    const [characters,setcharacters] = useState([]);
    
 
-
-   // function onSearch(id) {
-   //    axios.get("https://thesimpsonsquoteapi.glitch.me/quotes?count=200")
-   //       .then((response) => {
-   //          const data = response.data;
-   //          const formattedData = data.map((character) => {
-   //             return {
-   //                quote: character.quote,
-   //                character: character.character,
-   //                image: character.image
-   //             }
-   //          })
-   //          setcharacters(formattedData)
-   //       })
-   //       .catch((error) => {
-   //          console.error('Error en la solicitud Axios:', error);
-   //       });
-
-       
-      
-      // axios.get(`https://apisimpsons.fly.dev/api/personajes/${id}`)
-      //    .then((response) => {
-      //       const data = response.data.docs;
-      //       const formattedData = data.map((character) => {
-      //          return {
-      //             id: character._id,
-      //             nombre: character.Nombre,
-      //             historia: character.Historia,
-      //             imagen: character.Imagen,
-      //             genero: character.Genero,
-      //             estado: character.Estado,
-      //             ocupacion: character.Ocupacion,
-      //          };
-      //       });
-   
-      //       setcharacters(formattedData);
-      //    })
-      //    .catch((error) => {
-      //       console.error('Error en la solicitud Axios:', error);
-      //    });
-   
 
   
 
